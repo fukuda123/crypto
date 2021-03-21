@@ -44,7 +44,8 @@ def rsassa_pkcs1_v1_5_sign(n, d, m):
 
     s_int = pow(pt_int, d_int, n_int)
 
-    s = format(s_int, 'x')
+    fmt = '0' + str(k_int * 2) + 'x'
+    s = format(s_int, fmt)
 
     return s
 
